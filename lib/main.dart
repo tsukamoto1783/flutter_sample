@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/book_list_page.dart';
 import 'package:flutter_practice/main_model.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
                     child: Text("Btn"),
                     onPressed: (){
                     // ここでなにかの処理
-                      model.change_cample_text();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => BookList()),
+                      );
                     },
                   )
                 ],
