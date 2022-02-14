@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/book_list_model.dart';
 import 'package:provider/provider.dart';
+import '../add_book/add_book_page.dart';
+import 'book_list_model.dart';
 
 class BookListPage extends StatelessWidget {
   const BookListPage({Key? key}) : super(key: key);
@@ -33,6 +34,24 @@ class BookListPage extends StatelessWidget {
             );
           },
         ),
+
+        floatingActionButton:
+            Consumer<BookListModel>(builder: (context, model, child) {
+          return FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () async {
+              // data追加
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddBookPage(),
+                  fullscreenDialog: true,
+                ),
+              );
+              model.fetchBooks();
+            },
+          );
+        }),
 
         // ↓snapshotを用いたサンプル
         // body: StreamBuilder<QuerySnapshot>(
