@@ -1,7 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../domain/book.dart';
 import '../add_book/add_book_page.dart';
 import 'book_list_model.dart';
 
@@ -10,7 +10,8 @@ class BookListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Firebase.initializeApp(); // new
+    Firebase.initializeApp();
+
     return ChangeNotifierProvider<BookListModel>(
       create: (_) => BookListModel()..fetchBooks(),
       child: Scaffold(
@@ -18,7 +19,7 @@ class BookListPage extends StatelessWidget {
           title: Text("一覧"),
         ),
 
-        // getを用いたサンプル
+        // getを用いたItems取得
         body: Consumer<BookListModel>(
           builder: (context, model, child) {
             final books = model.books;
@@ -26,6 +27,44 @@ class BookListPage extends StatelessWidget {
                 .map(
                   (book) => ListTile(
                     title: Text(book.title),
+                    trailing: IconButton(
+                      icon: Icon(Icons.edit),
+
+                      // 更新処理
+                      onPressed: () async {
+                        // todo: 更新画面へ遷移
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddBookPage(book),
+                            fullscreenDialog: true,
+                          ),
+                        );
+                        model.fetchBooks();
+                      },
+                    ),
+
+                    // 削除処理
+                    onLongPress: () async {
+                      // todo: 削除画面へ遷移
+                      await showDialog(
+                          context: context,
+                          builder: (BuildContext conetxt) {
+                            return AlertDialog(
+                              title: Text('${book.title}削除しますか？'),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text('OK'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                    // todo:削除のAPIを叩く
+                                    deleteBook(context, model, book);
+                                  },
+                                )
+                              ],
+                            );
+                          });
+                    },
                   ),
                 )
                 .toList();
@@ -34,13 +73,14 @@ class BookListPage extends StatelessWidget {
             );
           },
         ),
-
         floatingActionButton:
             Consumer<BookListModel>(builder: (context, model, child) {
           return FloatingActionButton(
             child: Icon(Icons.add),
+
+            // 追加処理
             onPressed: () async {
-              // data追加
+              // todo:Item新規登録画面へ遷移
               await Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -82,4 +122,42 @@ class BookListPage extends StatelessWidget {
       ),
     );
   }
+}
+
+Future deleteBook(BuildContext context, BookListModel model, Book book) async {
+  try {
+    await model.deleteBook(book);
+    await showDialog(
+        context: context,
+        builder: (BuildContext conetxt) {
+          return AlertDialog(
+            title: Text('削除しました'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+    await model.fetchBooks();
+  } catch (e) {
+    showDialog(
+        context: context,
+        builder: (BuildContext conetxt) {
+          return AlertDialog(
+            title: Text(e.toString()),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  } // try-catch
 }
