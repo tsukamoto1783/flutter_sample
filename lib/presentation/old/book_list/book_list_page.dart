@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/presentation/old/domain/book.dart';
 import 'package:provider/provider.dart';
-import '../../domain/book.dart';
 import '../add_book/add_book_page.dart';
 import 'book_list_model.dart';
 
@@ -53,7 +53,7 @@ class BookListPage extends StatelessWidget {
                             return AlertDialog(
                               title: Text('${book.title}削除しますか？'),
                               actions: <Widget>[
-                                FlatButton(
+                                TextButton(
                                   child: Text('OK'),
                                   onPressed: () {
                                     Navigator.of(context).pop();
@@ -133,7 +133,7 @@ Future deleteBook(BuildContext context, BookListModel model, Book book) async {
           return AlertDialog(
             title: Text('削除しました'),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -150,7 +150,7 @@ Future deleteBook(BuildContext context, BookListModel model, Book book) async {
           return AlertDialog(
             title: Text(e.toString()),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();

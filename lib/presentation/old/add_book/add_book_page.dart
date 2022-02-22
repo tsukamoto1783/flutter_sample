@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/domain/book.dart';
-import 'package:flutter_practice/presentation/add_book/add_book_model.dart';
+import 'package:flutter_practice/presentation/old/add_book/add_book_model.dart';
 import 'package:provider/provider.dart';
+import '../domain/book.dart';
 
 class AddBookPage extends StatelessWidget {
   AddBookPage([this.book]);
@@ -33,7 +33,7 @@ class AddBookPage extends StatelessWidget {
                     model.bookTitel = text;
                   },
                 ),
-                RaisedButton(
+                TextButton(
                   child: Text(isUpdate ? "編集" : '追加'),
                   onPressed: () async {
                     if (isUpdate) {
@@ -62,7 +62,7 @@ Future addBook(AddBookModel model, BuildContext context) async {
           return AlertDialog(
             title: Text('保存'),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -79,7 +79,7 @@ Future addBook(AddBookModel model, BuildContext context) async {
           return AlertDialog(
             title: Text(e.toString()),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -100,7 +100,7 @@ Future updateBook(AddBookModel model, BuildContext context, Book book) async {
           return AlertDialog(
             title: Text('更新しました'),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -117,7 +117,7 @@ Future updateBook(AddBookModel model, BuildContext context, Book book) async {
           return AlertDialog(
             title: Text(e.toString()),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();

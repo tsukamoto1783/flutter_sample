@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NextPage extends StatelessWidget{
+class NextPage extends StatelessWidget {
   NextPage(this.name);
   final String name;
 
@@ -18,10 +18,10 @@ class NextPage extends StatelessWidget{
           children: <Widget>[
             Text(name),
             Center(
-              child: RaisedButton(
+              child: TextButton(
                 child: Text("Back!"),
-                onPressed: (){
-                  Navigator.pop(context,"hhhhhh");
+                onPressed: () {
+                  Navigator.pop(context, "hhhhhh");
                 },
               ),
             ),

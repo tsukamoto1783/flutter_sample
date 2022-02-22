@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/book.dart';
+import '../domain/book.dart';
 
 class AddBookModel extends ChangeNotifier {
   String bookTitel = '';
