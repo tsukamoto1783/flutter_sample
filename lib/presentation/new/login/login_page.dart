@@ -45,6 +45,7 @@ class LoginPage extends StatelessWidget {
                         onChanged: (text) {
                           model.setPasssword(text);
                         },
+                        obscureText: true,
                       ),
                       const SizedBox(
                         height: 16,

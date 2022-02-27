@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/presentation/new/add_book/add_book_page.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../domain/book.dart';
 import '../edit_book/edit_book_page.dart';
 import '../login/login_page.dart';
+import '../mypage/my_page.dart';
 import 'book_list_model.dart';
 
 class BookListPageNew extends StatelessWidget {
@@ -22,12 +23,21 @@ class BookListPageNew extends StatelessWidget {
             IconButton(
               // Screen transition to loginPage
               onPressed: () async {
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                      fullscreenDialog: true),
-                );
+                if (FirebaseAuth.instance.currentUser != null) {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyPage(),
+                        fullscreenDialog: true),
+                  );
+                } else {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                        fullscreenDialog: true),
+                  );
+                }
               },
               icon: const Icon(Icons.person),
             ),
