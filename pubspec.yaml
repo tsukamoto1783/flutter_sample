@@ -19,6 +19,8 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=2.0.0"
+
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -39,6 +41,13 @@ dependencies:
   flutter_slidable: ^1.2.0
   firebase_storage: ^10.2.7
   image_picker: ^0.8.4+9
+  dropdown_button2: ^1.2.1
+  flutter_hooks: ^0.18.2+1
+  hooks_riverpod: ^1.0.3
+  uuid: ^3.0.6
+  intl: ^0.17.0
+
+
 
 
 
