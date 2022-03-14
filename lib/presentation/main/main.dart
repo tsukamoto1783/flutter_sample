@@ -42,82 +42,43 @@ class Home extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          TextButton(
-            child: Text("To: BookListPage"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                // ↓ new:snapshotでのbookListパターン
-                MaterialPageRoute(builder: (context) => BookListPageNew()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: dropdwon1"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DropdownPage1()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: dropdwon2"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DropdownPage2()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: StatelfulWidget"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => StateTestPage(title: 'hoge')),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: StatefulWidget_2"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyHomePage_2()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: Riverpod Sample Counter"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ReverpodSample()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: Riverpod Sample ToDo"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RiverpodTodo()),
-              );
-            },
-          ),
-          TextButton(
-            child: Text("Test: DateTimeSample"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DateTimeSample()),
-              );
-            },
-          ),
+          TextBtnNextPage(
+              btn_text: "To: BookListPage", page_name: BookListPageNew()),
+          TextBtnNextPage(btn_text: "dropdwon1", page_name: DropdownPage1()),
+          TextBtnNextPage(btn_text: "dropdwon2", page_name: DropdownPage2()),
+          TextBtnNextPage(
+              btn_text: "StatelfulWidget",
+              page_name: StateTestPage(title: "test StatelessWidget")),
+          TextBtnNextPage(
+              btn_text: "StatefulWidget_2", page_name: MyHomePage_2()),
+          TextBtnNextPage(
+              btn_text: "Riverpod Sample Counter", page_name: ReverpodSample()),
+          TextBtnNextPage(
+              btn_text: "Riverpod Sample ToDo", page_name: RiverpodTodo()),
+          TextBtnNextPage(
+              btn_text: "DateTimeSample", page_name: DateTimeSample()),
         ],
       ),
+    );
+  }
+}
+
+class TextBtnNextPage extends StatelessWidget {
+  TextBtnNextPage({required this.btn_text, this.page_name});
+
+  final String btn_text;
+  var page_name;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      child: Text("Test: " + btn_text),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page_name),
+        );
+      },
     );
   }
 }
