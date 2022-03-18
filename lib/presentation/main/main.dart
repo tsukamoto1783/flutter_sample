@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import '../State_test/Riverpod_counter.dart';
+import '../Riverpod_sample/Riverpod_menu.dart';
 import '../State_test/state.dart';
 import '../State_test/state_2.dart';
-import '../State_test/todo_main.dart';
+import '../Riverpod_sample/todo_main.dart';
 import '../new/book_list/book_list_page.dart';
 import '../test_widget/DateTime.dart';
 import '../test_widget/dropdown1.dart';
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
           TextBtnNextPage(
               btn_text: "StatefulWidget_2", page_name: MyHomePage_2()),
           TextBtnNextPage(
-              btn_text: "Riverpod Sample Counter", page_name: ReverpodSample()),
+              btn_text: "Riverpod Sample Counter", page_name: RiverpodMenu()),
           TextBtnNextPage(
               btn_text: "Riverpod Sample ToDo", page_name: RiverpodTodo()),
           TextBtnNextPage(
@@ -72,7 +72,7 @@ class TextBtnNextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: Text("Test: " + btn_text),
+      child: Text(btn_text),
       onPressed: () {
         Navigator.push(
           context,

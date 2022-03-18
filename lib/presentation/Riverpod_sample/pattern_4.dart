@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// modelで機能を分けずに完結させたパターン
+
 // Providers are declared globally and specify how to create a state
 // ( プロバイダはグローバルに宣言され、状態を作成する方法を指定します)
 final counterProvider = StateProvider((ref) => 0);
 
-class ReverpodSample extends ConsumerWidget {
+class ReverpodSample4 extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
