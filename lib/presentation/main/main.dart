@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/presentation2/book_list/riv_book_list_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import '../Riverpod_sample/Riverpod_menu.dart';
@@ -44,6 +45,9 @@ class Home extends StatelessWidget {
         children: [
           TextBtnNextPage(
               btn_text: "To: BookListPage", page_name: BookListPageNew()),
+          TextBtnNextPage(
+              btn_text: "To: BookListPage Riverpod Ver",
+              page_name: RivBookListPage()),
           TextBtnNextPage(btn_text: "dropdwon1", page_name: DropdownPage1()),
           TextBtnNextPage(btn_text: "dropdwon2", page_name: DropdownPage2()),
           TextBtnNextPage(
