@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter App",
       home: Scaffold(
           appBar: AppBar(
-            title: const Text("List of various test pages"),
+            title: const Text("List of Test Pages"),
           ),
           body: Home()),
     );
