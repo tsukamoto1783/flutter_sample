@@ -7,6 +7,8 @@ import '../Riverpod_sample/Riverpod_menu.dart';
 import '../State_test/state.dart';
 import '../State_test/state_2.dart';
 import '../Riverpod_sample/todo_main.dart';
+import '../fl_chart/bar_chart_sample1.dart';
+import '../fl_chart/bar_chart_sample2.dart';
 import '../new/book_list/book_list_page.dart';
 import '../test_widget/DateTime.dart';
 import '../test_widget/dropdown1.dart';
@@ -61,6 +63,8 @@ class Home extends StatelessWidget {
               btn_text: "Riverpod Sample ToDo", page_name: RiverpodTodo()),
           TextBtnNextPage(
               btn_text: "DateTimeSample", page_name: DateTimeSample()),
+          TextBtnNextPage(btn_text: "fl_chart_1", page_name: BarChartSample7()),
+          TextBtnNextPage(btn_text: "fl_chart_2", page_name: BarChartSample3()),
         ],
       ),
     );
