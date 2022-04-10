@@ -4,6 +4,7 @@ import 'package:flutter_practice/BookListRiverpodVer/book_list/riv_book_list_pag
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import '../Riverpod_sample/Riverpod_menu.dart';
+import '../Riverpod_sample/firestore.dart';
 import '../State_test/state.dart';
 import '../State_test/state_2.dart';
 import '../Riverpod_sample/todo_main.dart';
@@ -65,6 +66,8 @@ class Home extends StatelessWidget {
               btn_text: "DateTimeSample", page_name: DateTimeSample()),
           TextBtnNextPage(btn_text: "fl_chart_1", page_name: BarChartSample7()),
           TextBtnNextPage(btn_text: "fl_chart_2", page_name: BarChartSample3()),
+          TextBtnNextPage(
+              btn_text: "firestore_get_sample", page_name: Firesoter_sample()),
         ],
       ),
     );
