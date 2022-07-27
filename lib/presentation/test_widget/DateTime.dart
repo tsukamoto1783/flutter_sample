@@ -25,9 +25,18 @@ class MyStatelesWidget extends StatelessWidget {
   // "ja"表記にするならmain処理の前にinitialize処理が必要。標準はUS表記なので。
   String time_ja = DateFormat('yyyy/MM/dd(E)', "ja").format(DateTime.now());
   String hoge = DateFormat.yMMMEd('ja').format(DateTime.now());
+  String Hm = DateFormat.Hm().format(DateTime.now());
+  String MM = DateFormat('MM').format(DateTime.now());
 
   @override
   Widget build(BuildContext context) {
+    int time_tmp = 200;
+    var hour = time_tmp ~/ 60;
+    var min = (time_tmp % 60) / 100;
+    print(hour);
+    print(min);
+    print(hour + min);
+
     return Center(
       child: Column(
         children: [
@@ -39,6 +48,12 @@ class MyStatelesWidget extends StatelessWidget {
           ),
           Center(
             child: Text(hoge),
+          ),
+          Center(
+            child: Text(Hm),
+          ),
+          Center(
+            child: Text(MM),
           ),
         ],
       ),

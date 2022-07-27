@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/BookListRiverpodVer/book_list/riv_book_list_page.dart';
 import 'package:flutter_practice/presentation/test_widget/Picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -11,7 +10,6 @@ import '../State_test/state_2.dart';
 import '../Riverpod_sample/todo_main.dart';
 import '../fl_chart/bar_chart_sample1.dart';
 import '../fl_chart/bar_chart_sample2.dart';
-import '../new/book_list/book_list_page.dart';
 import '../test_widget/DateTime.dart';
 import '../test_widget/dropdown1.dart';
 import '../test_widget/dropdown2.dart';
@@ -48,11 +46,6 @@ class Home extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            TextBtnNextPage(
-                btn_text: "To: BookListPage", page_name: BookListPageNew()),
-            TextBtnNextPage(
-                btn_text: "To: BookListPage Riverpod Ver",
-                page_name: RivBookListPage()),
             TextBtnNextPage(btn_text: "dropdwon1", page_name: DropdownPage1()),
             TextBtnNextPage(btn_text: "dropdwon2", page_name: DropdownPage2()),
             TextBtnNextPage(
