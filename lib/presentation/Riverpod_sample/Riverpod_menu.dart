@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main/main.dart';
+import '../../main.dart';
 import 'pattern_1.dart';
 import 'pattern_2.dart';
 import 'pattern_3.dart';

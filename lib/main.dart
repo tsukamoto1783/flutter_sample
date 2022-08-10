@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/presentation/test_widget/Picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import '../Riverpod_sample/Riverpod_menu.dart';
-import '../State_test/state.dart';
-import '../State_test/state_2.dart';
-import '../Riverpod_sample/todo_main.dart';
-import '../fl_chart/bar_chart_sample1.dart';
-import '../fl_chart/bar_chart_sample2.dart';
-import '../test_widget/DateTime.dart';
-import '../test_widget/dropdown1.dart';
-import '../test_widget/dropdown2.dart';
+import 'presentation/Riverpod_sample/Riverpod_menu.dart';
+import 'presentation/State_test/state.dart';
+import 'presentation/State_test/state_2.dart';
+import 'presentation/Riverpod_sample/todo_main.dart';
+import 'presentation/fl_chart/bar_chart_sample1.dart';
+import 'presentation/fl_chart/bar_chart_sample2.dart';
+import 'presentation/test_widget/DateTime.dart';
+import 'presentation/test_widget/dropdown1.dart';
+import 'presentation/test_widget/dropdown2.dart';
+import 'presentation/test_widget/macos_doc.dart';
+import 'presentation/test_widget/mouseRegion.dart';
 
 void main() {
   runApp(
@@ -64,6 +66,9 @@ class Home extends StatelessWidget {
                 btn_text: "fl_chart_2", page_name: BarChartSample3()),
             TextBtnNextPage(
                 btn_text: "Picker_sample", page_name: PickerSample()),
+            TextBtnNextPage(
+                btn_text: "MacOsInspired", page_name: MacOsInspiredDoc()),
+            TextBtnNextPage(btn_text: "mouseRegion", page_name: mouseRegion()),
           ],
         ),
       ),

@@ -49,5 +49,7 @@
     <string>Access to pick a photo</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Access to pick a photo</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 </dict>
 </plist>
