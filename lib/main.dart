@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/presentation/fl_chart/line_chart_sample2.dart';
 import 'package:flutter_practice/presentation/test_widget/Picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -64,6 +65,9 @@ class Home extends StatelessWidget {
                 btn_text: "fl_chart_1", page_name: BarChartSample7()),
             TextBtnNextPage(
                 btn_text: "fl_chart_2", page_name: BarChartSample3()),
+            TextBtnNextPage(
+                btn_text: "fl_line_chart_sample_2",
+                page_name: LineChartSample2()),
             TextBtnNextPage(
                 btn_text: "Picker_sample", page_name: PickerSample()),
             TextBtnNextPage(
