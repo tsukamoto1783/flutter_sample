@@ -30,7 +30,7 @@ class _PickerSampleState extends State<PickerSample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 _showModalPicker(context);
               },
