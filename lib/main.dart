@@ -15,6 +15,7 @@ import 'presentation/test_widget/dropdown1.dart';
 import 'presentation/test_widget/dropdown2.dart';
 import 'presentation/test_widget/macos_doc.dart';
 import 'presentation/test_widget/mouseRegion.dart';
+import 'presentation/test_widget/textFormFiled/textFormFieldHome.dart';
 
 void main() {
   runApp(
@@ -73,6 +74,9 @@ class Home extends StatelessWidget {
             TextBtnNextPage(
                 btn_text: "MacOsInspired", page_name: MacOsInspiredDoc()),
             TextBtnNextPage(btn_text: "mouseRegion", page_name: mouseRegion()),
+            TextBtnNextPage(
+                btn_text: "TextFormField",
+                page_name: const TextFormFieldHome()),
           ],
         ),
       ),
