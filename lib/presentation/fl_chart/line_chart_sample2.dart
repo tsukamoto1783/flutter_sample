@@ -27,7 +27,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               borderRadius: BorderRadius.all(
                 Radius.circular(18),
               ),
-              color: Color(0xff232d37),
+              color: Color(0xffffffff),
             ),
             child: Padding(
               padding: const EdgeInsets.only(
@@ -65,31 +65,21 @@ class _LineChartSample2State extends State<LineChartSample2> {
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    // maxXにて指定している値分だけforされる？
     const style = TextStyle(
-      color: Color(0xff68737d),
+      color: Colors.black,
       fontWeight: FontWeight.bold,
-      fontSize: 16,
+      fontSize: 12,
     );
     Widget text;
     switch (value.toInt()) {
-      case 1:
-        text = const Text('1', style: style);
-        break;
       case 2:
-        text = const Text('2', style: style);
-        break;
-      case 3:
-        text = const Text('3', style: style);
+        text = const Text('MAR', style: style);
         break;
       case 5:
-        text = const Text('5', style: style);
+        text = const Text('JUN', style: style);
         break;
-      case 10:
-        text = const Text('10', style: style);
-        break;
-      case 20:
-        text = const Text('20', style: style);
+      case 8:
+        text = const Text('SEP', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -104,9 +94,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Color(0xff67727d),
+      color: Colors.black,
       fontWeight: FontWeight.bold,
-      fontSize: 15,
+      fontSize: 12,
     );
     String text;
     switch (value.toInt()) {
@@ -128,33 +118,26 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     return LineChartData(
-      // 背景のグリッド線の設定
       gridData: FlGridData(
-        show: true, // 背景のグリッドデータの表示・非表示を決定
-        drawVerticalLine: true, // 水平方向のグリッド線の表示/非表示を決定
-        horizontalInterval: 1, // 背景グリッドの横線間隔。自動計算されるようにdefaultはNULL
-        verticalInterval: 1, // 背景グリッドの縦線間隔。自動計算されるようにdefaultはNULL
-
-        // 背景グリッドの横線種類オプション
+        show: true,
+        drawVerticalLine: true,
+        horizontalInterval: 1,
+        verticalInterval: 1,
         getDrawingHorizontalLine: (value) {
           return FlLine(
             color: const Color(0xff37434d),
-            strokeWidth: 1, // 線の太さ
+            strokeWidth: 1,
           );
         },
-
-        // 背景グリッドの縦線種類オプション
         getDrawingVerticalLine: (value) {
           return FlLine(
             color: const Color(0xff37434d),
-            strokeWidth: 1, // 線の太さ
+            strokeWidth: 1,
           );
         },
       ),
-
-      // グラフのタイトル設定
       titlesData: FlTitlesData(
-        show: true, // 表示・非表示
+        show: true,
         rightTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
@@ -172,29 +155,22 @@ class _LineChartSample2State extends State<LineChartSample2> {
         leftTitles: AxisTitles(
           sideTitles: SideTitles(
             showTitles: true,
-            interval: 1, // テキスト間隔(いまいち不明)
-            getTitlesWidget: leftTitleWidgets, // 以下のグラフの最大値をvalueとして仕様
+            interval: 1,
+            getTitlesWidget: leftTitleWidgets,
             reservedSize: 42,
           ),
         ),
       ),
-
-      // グラフの外枠線
       borderData: FlBorderData(
         show: true,
         border: Border.all(color: const Color(0xff37434d)),
       ),
-
-      // グラフの表示数(最大値)
       minX: 0,
-      maxX: 31,
+      maxX: 11,
       minY: 0,
       maxY: 6,
-
-      // チャートのラインを表示
       lineBarsData: [
         LineChartBarData(
-          // 線が通るFLSpotのx,y座標のリスト
           spots: const [
             FlSpot(0, 3),
             FlSpot(2.6, 2),
@@ -204,23 +180,15 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(9.5, 3),
             FlSpot(11, 4),
           ],
-
-          isCurved: false, // スポットを結ぶ線の角を曲げるかどうか
-
-          // グラデーション設定
+          isCurved: true,
           gradient: LinearGradient(
             colors: gradientColors,
           ),
-
-          barWidth: 5, // barの線幅
-          isStrokeCapRound: false, // バーラインの開始と終了がQubicかRoundかを決定する
-
-          // barの角(point)にドットマークつけるかどうか
+          barWidth: 5,
+          isStrokeCapRound: true,
           dotData: FlDotData(
             show: false,
           ),
-
-          // バー領域(オーロラみたいになってる領域)の表示/非表示を設定
           belowBarData: BarAreaData(
             show: true,
             gradient: LinearGradient(
