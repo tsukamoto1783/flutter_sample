@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/presentation/fl_chart/line_chart_sample2.dart';
 import 'package:flutter_practice/presentation/test_widget/Picker.dart';
+import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField4.dart';
+import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField2.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'presentation/Riverpod_sample/Riverpod_menu.dart';
@@ -14,6 +17,7 @@ import 'presentation/test_widget/dropdown1.dart';
 import 'presentation/test_widget/dropdown2.dart';
 import 'presentation/test_widget/macos_doc.dart';
 import 'presentation/test_widget/mouseRegion.dart';
+import 'presentation/test_widget/textFormFiled/textFormFieldHome.dart';
 
 void main() {
   runApp(
@@ -65,10 +69,16 @@ class Home extends StatelessWidget {
             TextBtnNextPage(
                 btn_text: "fl_chart_2", page_name: BarChartSample3()),
             TextBtnNextPage(
+                btn_text: "fl_line_chart_sample_2",
+                page_name: LineChartSample2()),
+            TextBtnNextPage(
                 btn_text: "Picker_sample", page_name: PickerSample()),
             TextBtnNextPage(
                 btn_text: "MacOsInspired", page_name: MacOsInspiredDoc()),
             TextBtnNextPage(btn_text: "mouseRegion", page_name: mouseRegion()),
+            TextBtnNextPage(
+                btn_text: "TextFormField",
+                page_name: const TextFormFieldHome()),
           ],
         ),
       ),
