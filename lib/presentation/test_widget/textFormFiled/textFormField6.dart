@@ -10,8 +10,7 @@ class TextFormFieldSample6 extends StatefulWidget {
 class _TextFormFieldSampleState extends State<TextFormFieldSample6> {
   // Controllerの定義
   final TextEditingController _nameController = TextEditingController();
-
-  // バリデーションエラー用の変数定義
+  // バリデーションエラー表示用の変数定義
   String? _nameErrorText;
 
   // ウィジェットが破棄されるタイミングで、Controllerも破棄

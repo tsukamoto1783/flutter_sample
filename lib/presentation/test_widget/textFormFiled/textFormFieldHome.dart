@@ -6,6 +6,7 @@ import 'package:flutter_practice/presentation/test_widget/textFormFiled/textForm
 import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField4.dart';
 import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField5.dart';
 import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField6.dart';
+import 'package:flutter_practice/presentation/test_widget/textFormFiled/textFormField7.dart';
 
 // 画面遷移をする部分のコード
 class TextFormFieldHome extends StatelessWidget {
@@ -44,6 +45,10 @@ class TextFormFieldHome extends StatelessWidget {
               TextBtnNextPage(
                 btn_text: "TextFormField6",
                 page_name: const TextFormFieldSample6(),
+              ),
+              TextBtnNextPage(
+                btn_text: "TextFormField7",
+                page_name: const TextFormFieldSample7(),
               ),
             ],
           ),

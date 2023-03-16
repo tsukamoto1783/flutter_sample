@@ -62,6 +62,7 @@ class _TextFormFieldSampleState extends State<TextFormFieldSample3> {
             ElevatedButton(
               child: const Text('Submit'),
               onPressed: () {
+                // 以下の部分でエラーが発生する
                 if (_nameKey.currentState!.validate()) {
                   _nameKey.currentState?.save();
 
