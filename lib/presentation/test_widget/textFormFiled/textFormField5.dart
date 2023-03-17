@@ -30,6 +30,7 @@ class _TextFormFieldSampleState extends State<TextFormFieldSample5> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            // controllerプロパティの指定
             TextFormField(
               controller: _nameController,
               decoration: const InputDecoration(

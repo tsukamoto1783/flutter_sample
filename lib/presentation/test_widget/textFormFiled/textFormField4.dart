@@ -30,6 +30,7 @@ class _TextFormFieldSampleState extends State<TextFormFieldSample4> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            // controllerプロパティの指定
             TextFormField(
               controller: _nameController,
               decoration: const InputDecoration(
@@ -38,6 +39,7 @@ class _TextFormFieldSampleState extends State<TextFormFieldSample4> {
               ),
             ),
             TextFormField(
+              // controllerプロパティの指定
               controller: _emailController,
               decoration: const InputDecoration(
                 labelText: 'email',

@@ -63,10 +63,10 @@ class _TextFormFieldSampleState extends State<TextFormFieldSample2> {
                 child: const Text('Submit'),
                 onPressed: () {
                   // TextFormFieldのvalidatorで指定したバリデーションを確認し、エラーが無ければtrueを返す
-                  // MEMO：Formウィジェットに一意のGlobalKeyを指定しているので、「_formKey.currentState」を使用すると、Form配下の全てのフォームが対象に。
+                  // Formウィジェットに一意のGlobalKeyを指定しているので、「_formKey.currentState」を使用すると、Form配下の全てのフォームが対象に。
                   if (_formKey.currentState!.validate()) {
                     // フォームの状態を保存して、TextFormFieldのonSavedを呼び出し
-                    // Form配下の全てのフォームのonSaveプロパティが対象
+                    // Form配下の全てのTextFormFieldのonSavedプロパティが対象（呼び出し）
                     _formKey.currentState?.save();
 
                     ScaffoldMessenger.of(context).showSnackBar(
